@@ -26,6 +26,7 @@ public class UserServiceImpl implements UserService {
         user1.setUsername(user.getUsername());
         user1.setLastname(user.getLastname());
         user1.setEmail(user.getEmail());
+        user1.setAge(user.getAge());
         user1.setPassword(passwordEncoder.encode(user.getPassword()));
         Role role = roleRepository.findByRoleName(roleName);
         Set<Role>roles = new HashSet<>();
@@ -40,6 +41,7 @@ public class UserServiceImpl implements UserService {
      user1.setUsername(user.getUsername());
      user1.setLastname(user.getLastname());
      user1.setEmail(user.getEmail());
+     user1.setAge(user.getAge());
      user1.setPassword(passwordEncoder.encode(user.getPassword()));
      Role role = roleRepository.findByRoleName(roleName);
      Set<Role>roles = new HashSet<>();

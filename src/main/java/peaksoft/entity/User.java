@@ -21,6 +21,8 @@ public class User {
     String username;
     String lastname;
     String email;
+    @Column(name = "user_age")
+    int age;
     private String password;
     @ManyToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH}, fetch = FetchType.EAGER)
             @JoinTable(name = "users_role", joinColumns = @JoinColumn(name = "user_id",referencedColumnName = "id"),

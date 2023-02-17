@@ -115,6 +115,7 @@
         <th scope="col">NAME</th>
         <th scope="col">LAST NAME</th>
         <th scope="col"> EMAIL</th>
+        <th scope="col"> AGE</th>
         <th scope="col"> ROLE NAME</th>
         <th scope="col">UPDATE</th>
         <th scope="col">DELETE</th>
@@ -126,14 +127,16 @@
         <td th:text="${user.username}"></td>
         <td th:text="${user.lastname}"></td>
         <td th:text="${user.email}"></td>
-        <td th:text="${user.getRoleName}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.roles}"></td>
         <td><a th:href="@{/users/update/{id}(id=${user.id})}"><button class="custom-btn btn-6"><span>UPDATE</span></button></a></td>
         <td>
-            <form th:method="GET" th:action="@{/users/delete/{id}(id=${user.getId()})}"
+            <form th:method="GET" th:action="@{/users/delete/{id}(id=${user.getId()})}"sec:authorize="hasAuthority('ADMIN')"
             ><button class="custom-btn btn-6"><span>DELETE</span></button></form></td>
     </tr>
     </tbody>
 </table>
 <a  href="/users/saveUser" ><button class="custom-btn btn-6"><span>ADD</span></button></a>
+<a href="/"><button class="custom-btn btn-6"><span>go back</span></button></a>
 </body>
 </html>

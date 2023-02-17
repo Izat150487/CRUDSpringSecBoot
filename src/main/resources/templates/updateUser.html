@@ -117,8 +117,16 @@
         <input type="text" th:field="*{lastname}" class="form-control" id="exampleInputPassword1">
     </div>
     <div class="mb-3">
+        <label for="age" class="form-label">age</label>
+        <input type="text" th:field="*{age}" class="form-control" id="age">
+    </div>
+    <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">EMAIL</label>
         <input type="text" th:field="*{email}" class="form-control" id="email">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">password</label>
+        <input type="password" th:field="*{password}" class="form-control" id="password">
     </div>
     <div>
         <button class="custom-btn btn-6"><span><input type = "radio" value="USER" th:field="*{roleName}"
