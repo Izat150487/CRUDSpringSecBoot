@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW8EUVLlWMsQBXOBjiKFuNJBXCX2lmOMvr_g&usqp=CAU");
+        }
+        .custom-btn {
+            width: 130px;
+            height: 40px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+            7px 7px 20px 0px rgba(0,0,0,.1),
+            4px 4px 5px 0px rgba(0,0,0,.1);
+            outline: none;
+        }
+        .btn-6 {
+            background: rgb(194, 206, 213);
+            background: radial-gradient(circle, rgb(135, 93, 203) 0%, rgb(117, 117, 190) 100%);
+            line-height: 42px;
+            padding: 0;
+            border: none;
+        }
+        .btn-6 span {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .btn-6:before,
+        .btn-6:after {
+            position: absolute;
+            content: "";
+            height: 0%;
+            width: 1px;
+            box-shadow:
+                    -1px -1px 20px 0px rgba(255,255,255,1),
+                    -4px -4px 5px 0px rgba(255,255,255,1),
+                    7px 7px 20px 0px rgba(0,0,0,.4),
+                    4px 4px 5px 0px rgba(0,0,0,.3);
+        }
+        .btn-6:before {
+            right: 0;
+            top: 0;
+            transition: all 500ms ease;
+        }
+        .btn-6:after {
+            left: 0;
+            bottom: 0;
+            transition: all 500ms ease;
+        }
+        .btn-6:hover{
+            background: transparent;
+            color: #404044;
+            box-shadow: none;
+        }
+        .btn-6:hover:before {
+            transition: all 500ms ease;
+            height: 100%;
+        }
+        .btn-6:hover:after {
+            transition: all 500ms ease;
+            height: 100%;
+        }
+        .btn-6 span:before,
+        .btn-6 span:after {
+            position: absolute;
+            content: "";
+            box-shadow:
+                    -1px -1px 20px 0px rgba(255,255,255,1),
+                    -4px -4px 5px 0px rgba(255,255,255,1),
+                    7px 7px 20px 0px rgba(0,0,0,.4),
+                    4px 4px 5px 0px rgba(0,0,0,.3);
+        }
+        .btn-6 span:before {
+            left: 0;
+            top: 0;
+            width: 0%;
+            height: .5px;
+            transition: all 500ms ease;
+        }
+        .btn-6 span:after {
+            right: 0;
+            bottom: 0;
+            width: 0%;
+            height: .5px;
+            transition: all 500ms ease;
+        }
+        .btn-6 span:hover:before {
+            width: 100%;
+        }
+        .btn-6 span:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body style="background:  rgb(186,150,247);
+    background: radial-gradient(circle, rgb(137,94,224) 0%, rgb(129,88,217) 100%);
+    line-height: 42px;
+    padding: 0;
+    border: none">
+<header>
+    <div class="header" role="heading">
+        <a th:href="@{companies}"><font th:size="5"><button class="custom-btn btn-6"><span>Companies</span></button></font></a>
+        <a th:href="@{courses}"><font th:size="5"><button class="custom-btn btn-6"><span>Courses</span></button></font></a>
+        <a th:href="@{groups}"><font th:size="5"><button class="custom-btn btn-6"><span>Groups</span></button></font></a>
+        <a th:href="@{students}"><font th:size="5"><button class="custom-btn btn-6"><span>Students</span></button></font></a>
+        <a th:href="@{teachers}"><font th:size="5"><button class="custom-btn btn-6"><span>Teachers</span></button></font></a>
+        <br>
+        <br>
+        <h1 style="color: white" align="center"><br>PEAKSOFT LMS</h1>
+    </div>
+</header>
+<table class="table" >
+    <thead>
+    <tr >
+        <th scope="col">#</th>
+        <th scope="col">Company Name</th>
+        <th scope="col">Located Country</th>
+        <th scope="col">Courses</th>
+        <th scope="col">Students</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="company:${companies}">
+        <td th:text="${company.id}"></td>
+        <td th:text="${company.companyName}"></td>
+        <td th:text="${company.locatedCountry}"></td>
+        <td><a th:href="@{/companies/courses/{id}(id=${company.id})}"><button class="custom-btn btn-6"><span>Courses</span></button></a> </td>
+        <td><a th:href="@{/companies/students/{id}(id=${company.id})}"><button class="custom-btn btn-6"><span>Students</span></button></a> </td>
+        <td><a th:href="@{/companies/update/{id}(id=${company.id})}"><button class="custom-btn btn-6"><span>UPDATE</span></button></a></td>
+        <td>
+            <form th:method="GET" th:action="@{/companies/delete/{id}(id=${company.getId()})}"><button class="custom-btn btn-6"><span>DELETE</span></button>
+            </form></td>
+    </tr>
+    </tbody>
+</table>
+<a  href="/companies/addCompany"><button class="custom-btn btn-6"><span>ADD</span></button></a>
+<a href="/"><button class="custom-btn btn-6"><span>go back</span></button></a>
+</body>
+
+</html>
