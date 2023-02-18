@@ -3,7 +3,7 @@ package peaksoft.controller;
 import peaksoft.entity.Company;
 import peaksoft.entity.Course;
 import peaksoft.entity.Student;
-import peaksoft.repository.CompanyRepository;
+import peaksoft.config.repository.CompanyRepository;
 import peaksoft.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,13 +49,11 @@ public class CompanyController {
 
     @RequestMapping(value = "/{id}", method= {RequestMethod.PATCH, RequestMethod.GET})
     public String updateCompany(@PathVariable("id") Long id, @ModelAttribute("company")Company company){
-      //  companyService.updateCompany(id,company);
         companyRepository.saveAndFlush(company);
         return "redirect:/companies";
     }
     @RequestMapping (value = "/delete/{id}", method= {RequestMethod.DELETE, RequestMethod.GET})
     public String delete(@PathVariable("id") Long id){
-     //   Company company = companyService.getById(id);
        companyRepository.deleteById(id);
         return "redirect:/companies";
     }

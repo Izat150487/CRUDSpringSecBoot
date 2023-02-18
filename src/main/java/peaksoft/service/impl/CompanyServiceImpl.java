@@ -3,8 +3,8 @@ package peaksoft.service.impl;
 import peaksoft.entity.Company;
 import peaksoft.entity.Course;
 import peaksoft.entity.Student;
-import peaksoft.repository.CompanyRepository;
-import peaksoft.repository.CourseRepository;
+import peaksoft.config.repository.CompanyRepository;
+import peaksoft.config.repository.CourseRepository;
 import peaksoft.service.CompanyService;
 import org.springframework.stereotype.Service;
 

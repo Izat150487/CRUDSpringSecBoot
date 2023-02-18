@@ -2,7 +2,7 @@ package peaksoft.controller;
 
 import peaksoft.entity.Group;
 import peaksoft.entity.Student;
-import peaksoft.repository.StudentRepository;
+import peaksoft.config.repository.StudentRepository;
 import peaksoft.service.GroupService;
 import peaksoft.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,7 +56,6 @@ public class StudentController {
     }
     @RequestMapping(value = "/delete/{id}", method = {RequestMethod.DELETE,RequestMethod.GET})
     public String delete(@PathVariable("id") Long id){
-     //   Student student = studentService.getById(id);
         studentRepository.deleteById(id);
         return "redirect:/students";
     }

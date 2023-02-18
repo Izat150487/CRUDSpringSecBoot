@@ -1,7 +1,7 @@
 package peaksoft.controller;
 
 import peaksoft.entity.User;
-import peaksoft.repository.UserRepository;
+import peaksoft.config.repository.UserRepository;
 import peaksoft.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

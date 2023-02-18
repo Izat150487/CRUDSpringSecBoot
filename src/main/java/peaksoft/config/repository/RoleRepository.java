@@ -1,4 +1,4 @@
-package peaksoft.repository;
+package peaksoft.config.repository;
 
 import peaksoft.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -4,7 +4,7 @@ import peaksoft.entity.Company;
 import peaksoft.entity.Course;
 import peaksoft.entity.Group;
 import peaksoft.entity.Teacher;
-import peaksoft.repository.CourseRepository;
+import peaksoft.config.repository.CourseRepository;
 import peaksoft.service.CompanyService;
 import peaksoft.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +55,6 @@ public class CoursesController {
     @RequestMapping(value = "/{id}", method= {RequestMethod.PATCH, RequestMethod.GET})
     public String updateCourse9(@PathVariable("id") Long id,@ModelAttribute("course") Course course){
         courseService.updateCourse(id,course, course.getCompanyId());
-        //courseRepository.saveAndFlush(course);
         return "redirect:/courses";
     }
     @RequestMapping (value = "/delete/{id}", method= {RequestMethod.DELETE, RequestMethod.GET})

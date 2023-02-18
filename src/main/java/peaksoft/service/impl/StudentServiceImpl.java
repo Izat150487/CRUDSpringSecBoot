@@ -2,8 +2,8 @@ package peaksoft.service.impl;
 
 import peaksoft.entity.Group;
 import peaksoft.entity.Student;
-import peaksoft.repository.GroupRepository;
-import peaksoft.repository.StudentRepository;
+import peaksoft.config.repository.GroupRepository;
+import peaksoft.config.repository.StudentRepository;
 import peaksoft.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

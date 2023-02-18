@@ -2,8 +2,8 @@ package peaksoft.service.impl;
 
 import peaksoft.entity.Role;
 import peaksoft.entity.User;
-import peaksoft.repository.RoleRepository;
-import peaksoft.repository.UserRepository;
+import peaksoft.config.repository.RoleRepository;
+import peaksoft.config.repository.UserRepository;
 import peaksoft.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;

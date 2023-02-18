@@ -2,7 +2,7 @@ package peaksoft.service.impl;
 
 import peaksoft.entity.MyUser;
 import peaksoft.entity.User;
-import peaksoft.repository.UserRepository;
+import peaksoft.config.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

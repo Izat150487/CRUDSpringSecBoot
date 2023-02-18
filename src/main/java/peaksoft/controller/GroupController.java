@@ -3,7 +3,7 @@ package peaksoft.controller;
 import peaksoft.entity.Course;
 import peaksoft.entity.Group;
 import peaksoft.entity.Student;
-import peaksoft.repository.GroupRepository;
+import peaksoft.config.repository.GroupRepository;
 import peaksoft.service.CourseService;
 import peaksoft.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +60,6 @@ public class GroupController {
     }
     @RequestMapping(value = "/delete/{id}", method = {RequestMethod.DELETE, RequestMethod.GET})
     public String delete(@PathVariable("id") Long id){
-       // Group group = groupService.getById(id);
         groupRepository.deleteById(id);
         return "redirect:/groups";
     }
@@ -72,16 +71,6 @@ public class GroupController {
         model.addAttribute("courses",courses);
         return "group/courses";
     }
-//    @GetMapping("/search")
-//    public String search(@PathVariable("id") Long id,@ModelAttribute("group") Group group) {
-//        groupService.searchStudent(id, group.getStudentId());
-//        return "group/studentSearchForm";
-//    }
-//    @PostMapping("/{id}")
-//    public String searchStudent(@PathVariable("id") Long id, Model model){
-//        model.addAttribute("student", new Student());
-//        return "redirect:/groups";
-
 
     @GetMapping("/students/{id}")
     public String students(@PathVariable("id") Long id, Model model,@ModelAttribute("student")Student student){

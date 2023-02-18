@@ -1,4 +1,4 @@
-package peaksoft.repository;
+package peaksoft.config.repository;
 
 import peaksoft.entity.Course;
 import peaksoft.entity.Group;

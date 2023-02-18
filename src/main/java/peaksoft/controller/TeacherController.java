@@ -3,7 +3,7 @@ package peaksoft.controller;
 import peaksoft.entity.Course;
 import peaksoft.entity.Student;
 import peaksoft.entity.Teacher;
-import peaksoft.repository.TeacherRepository;
+import peaksoft.config.repository.TeacherRepository;
 import peaksoft.service.CourseService;
 import peaksoft.service.TeacherService;
 import org.springframework.stereotype.Controller;
@@ -57,7 +57,6 @@ public class TeacherController {
     }
     @RequestMapping(value = "/delete/{id}", method = {RequestMethod.DELETE,RequestMethod.GET})
     public String delete(@PathVariable("id") Long id){
-      //  Teacher teacher = teacherService.getById(id);
         teacherRepository.deleteById(id);
         return "redirect:/teachers";
     }
