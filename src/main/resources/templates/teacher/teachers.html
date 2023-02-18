@@ -141,7 +141,7 @@
         <td th:text="${teacher.lastName}"></td>
         <td th:text="${teacher.email}"></td>
         <td th:text="${teacher.course.courseName}"></td>
-        <td><a th:href="@{/teachers/students/{id}(id=${teacher.id})}"><button class="custom-btn btn-6"><span>QUANTITY</span></button></a></td>
+        <td><a th:href="@{/teachers/students/{id}(id=${teacher.id})}"><button class="custom-btn btn-6"><span>STUDENTS</span></button></a></td>
         <td><a th:href="@{/teachers/update/{id}(id=${teacher.id})}"><button class="custom-btn btn-6"><span>UPDATE</span></button></a></td>
         <td>
             <form th:method="GET" th:action="@{/teachers/delete/{id}(id=${teacher.getId()})}"

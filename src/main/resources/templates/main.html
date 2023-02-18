@@ -187,11 +187,11 @@
 <h1 style="color: white" align="center"><br>PEAKSOFT LMS</h1>
 <br><br>
 <div class="header" role="heading">
-  <a th:href="@{/companies}" sec:authorize="hasAnyAuthority('ADMIN','INSTRUCTOR')"><font th:size="5"><button class="custom-btn btn-6"><span>Companies</span></button></font></a>
-  <a th:href="@{/courses}" sec:authorize="hasAuthority('ADMIN')"><font th:size="5"><button class="custom-btn btn-6"><span>Courses</span></button></font></a>
-  <a th:href="@{/groups}" sec:authorize="hasAuthority('ADMIN')"><font th:size="5"><button class="custom-btn btn-6"><span>Groups</span></button></font></a>
-  <a th:href="@{/students}" sec:authorize="hasAuthority('ADMIN')"><font th:size="5"><button class="custom-btn btn-6"><span>Students</span></button></font></a>
-  <a th:href="@{/teachers}" sec:authorize="hasAnyAuthority('ADMIN','INSTRUCTOR')"><font th:size="5"><button class="custom-btn btn-6"><span>Teachers</span></button></font></a>
+  <a th:href="@{/companies}" sec:authorize="hasAuthority('ADMIN')"><font th:size="5"><button class="custom-btn btn-6"><span>Companies</span></button></font></a>
+  <a th:href="@{/courses}" sec:authorize="hasAnyAuthority('ADMIN','INSTRUCTOR')"><font th:size="5"><button class="custom-btn btn-6"><span>Courses</span></button></font></a>
+  <a th:href="@{/groups}" sec:authorize="hasAnyAuthority('ADMIN','INSTRUCTOR')"><font th:size="5"><button class="custom-btn btn-6"><span>Groups</span></button></font></a>
+  <a th:href="@{/students}" sec:authorize="hasAnyAuthority('ADMIN','INSTRUCTOR')"><font th:size="5"><button class="custom-btn btn-6"><span>Students</span></button></font></a>
+  <a th:href="@{/teachers}" sec:authorize="hasAuthority('ADMIN')"><font th:size="5"><button class="custom-btn btn-6"><span>Teachers</span></button></font></a>
   <a th:href="@{/users/users}" sec:authorize="hasAuthority('ADMIN')"><font th:size="5"><button class="custom-btn btn-6"><span>Users</span></button></font></a>
   <a th:href="@{/users/profile}" sec:authorize="hasAnyAuthority('ADMIN','INSTRUCTOR','USER')"><font th:size="5"><button class="custom-btn btn-6"><span> My profile </span></button></font></a>
 </div>
